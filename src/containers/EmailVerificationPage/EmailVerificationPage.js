@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
@@ -61,6 +62,9 @@ export const EmailVerificationPageComponent = props => {
 
   return (
     <Page title={title} scrollingDisabled={scrollingDisabled}>
+      <Helmet>
+        <meta name="referrer" content="origin" />
+      </Helmet>
       <LayoutSingleColumn>
         <LayoutWrapperTopbar>
           <TopbarContainer />
