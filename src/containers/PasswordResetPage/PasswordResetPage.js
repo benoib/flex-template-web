@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
@@ -122,6 +123,10 @@ export class PasswordResetPageComponent extends Component {
 
     return (
       <Page title={title} scrollingDisabled={scrollingDisabled}>
+        <Helmet>
+          <meta name="referrer" content="origin" />
+        </Helmet>
+
         <LayoutSingleColumn>
           <LayoutWrapperTopbar>
             <TopbarContainer />
